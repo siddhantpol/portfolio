@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300400;500;600;700;800;900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
-    color: #0F2E43;
+body {
+    color: #ffffff; /* Change text color to white */
     background: #081b29;
-
 }
 
-.header{
+.header {
     position: fixed;
     top: 0;
     left: 0;
@@ -23,31 +23,74 @@ body{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-
 }
-.logo{
+
+.header .navbar {
+    background-color: transparent !important;
+    box-shadow: none;
+}
+
+.header .navbar .nav-link .active {
+    color: #387deb;
+    transition: 0.3s;
+}
+
+.header .navbar .nav-link {
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.header .navbar .nav-link:hover {
+    color: #315473;
+}
+
+.logo {
     font-size: 25px;
     color: #0F2E43;
     text-decoration: none;
     font-weight: 600;
 }
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    color: #fff !important;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.navbar-nav .nav-item .nav-link.active {
+    color: #315473 !important;
+}
+
+.navbar-nav .nav-item .nav-link.active:hover {
+    color: #fff !important;
+}
+
+.navbar-brand:hover {
+    color: #315473 !important;
+}
+
 .navbar a {
     font-size: 18px;
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
     margin-left: 35px;
-    transition: .3s;
+    transition: 0.3s;
 }
-.navbar a:hover, 
+
+.navbar a:hover,
 .navbar a.active {
-    color:#315473;
+    color: #315473;
 }
 
 .home{
     height: 100vh;
     display: flex;
-    background: url('pexels-lumn-167699.jpg') no-repeat;
+    background: url('bgimg.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     align-items: center;
@@ -60,7 +103,7 @@ body{
 }
 
 .home-content h1{
-    font-size: 56px;
+    font-size: 48px;
     font-weight: 700;
     line-height: 1.2;
 }
