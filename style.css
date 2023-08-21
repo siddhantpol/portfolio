@@ -12,12 +12,13 @@ body {
     background: #081b29;
 }
 
+
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
+    padding: 0;
     background: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: space-between;
@@ -92,7 +93,7 @@ body {
 .home{
     height: 100vh;
     display: flex;
-    background: url('bgimg3.jpg') no-repeat;
+    background: url('bgimg3.jpg') repeat-y;
     background-size: cover;
     background-position: center;
     align-items: center;
