@@ -8,8 +8,9 @@
 }
 
 body {
-    color: #ffffff; /* Change text color to white */
-    background: #081b29;
+    color: #8c8c8c;
+    background-color: #081b29; /* Set background color */
+    background: url('bgimg3.jpg') repeat-x center center/cover; /* Set background image with cover property */
 }
 
 
@@ -93,8 +94,9 @@ body {
 .home{
     height: 100vh;
     display: flex;
-    background: url('bgimg3.jpg') repeat-y;
-    background-size: cover;
+    background: #000;
+    background: url('bgimg3.jpg') repeat-x;
+    background-size:auto ;
     background-position: center;
     align-items: center;
     padding: 0 10%;
@@ -243,6 +245,33 @@ body {
 
 .home-sci a:hover::before{
     width: 100%;
+}
+
+@media (max-width: 767px) {
+    .navbar-nav {
+        margin-right: 0; /* Remove right margin on mobile */
+    }
+
+    .navbar a {
+        margin-left: 15px; /* Reduce left margin on mobile */
+    }
+
+    .home-content h1 {
+        font-size: 36px; /* Decrease font size for smaller screens */
+    }
+
+    .home-content h3 {
+        font-size: 24px; /* Decrease font size for smaller screens */
+    }
+
+    .home-content p {
+        font-size: 14px; /* Decrease font size for smaller screens */
+    }
+
+    .btn-box a {
+        width: 130px; /* Reduce button width on mobile */
+        font-size: 16px; /* Decrease font size for smaller screens */
+    }
 }
 
 
