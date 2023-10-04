@@ -10,9 +10,8 @@
 body {
     color: #8c8c8c;
     background-color: #081b29; /* Set background color */
-    background: url('bgimg3.jpg') repeat-x center center/cover; /* Set background image with cover property */
+    background: url('bgimg.jpg') repeat-x center center/cover; /* Set background image with cover property */
 }
-
 
 .header {
     position: fixed;
@@ -20,9 +19,9 @@ body {
     left: 0;
     width: 100%;
     padding: 0;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.652);
     display: flex;
-    justify-content: space-between;
+    justify-content:flex-end; /* Align items to the left */
     align-items: center;
     z-index: 100;
 }
@@ -51,6 +50,7 @@ body {
     color: #0F2E43;
     text-decoration: none;
     font-weight: 600;
+    margin-left: 20px; /* Adds some space between brand and edge of the screen */
 }
 
 .navbar-brand {
@@ -61,9 +61,11 @@ body {
 }
 
 .navbar-nav {
-    margin-left: 0;
-    margin-right: 100px; /* Adds some space between brand and links */
+    margin-right: 20px; /* Adds some space between navbar items and edge of the screen */
 }
+
+/* Rest of your CSS styles remain the same */
+
 
 .navbar-nav .nav-item .nav-link.active {
     color: #315473 !important;
@@ -95,7 +97,7 @@ body {
     height: 100vh;
     display: flex;
     background: #000;
-    background: url('bgimg3.jpg') repeat-x;
+    background: url('bgimg.jpg') repeat-x;
     background-size:auto ;
     background-position: center;
     align-items: center;
@@ -249,28 +251,28 @@ body {
 
 @media (max-width: 767px) {
     .navbar-nav {
-        margin-right: 0; /* Remove right margin on mobile */
+        margin-right: 0;
     }
 
     .navbar a {
-        margin-left: 15px; /* Reduce left margin on mobile */
+        margin-left: 15px;
     }
 
     .home-content h1 {
-        font-size: 36px; /* Decrease font size for smaller screens */
+        font-size: 36px;
     }
 
     .home-content h3 {
-        font-size: 24px; /* Decrease font size for smaller screens */
+        font-size: 24px;
     }
 
     .home-content p {
-        font-size: 14px; /* Decrease font size for smaller screens */
+        font-size: 14px;
     }
 
     .btn-box a {
-        width: 130px; /* Reduce button width on mobile */
-        font-size: 16px; /* Decrease font size for smaller screens */
+        width: 130px;
+        font-size: 16px;
     }
 }
 
