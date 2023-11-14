@@ -145,7 +145,7 @@ body {
     border: 2px solid#51319c;
     border-radius: 8px;
     font-size: 19px;
-    color: #081b29;
+    color: #301b61;
     text-decoration: none;
     letter-spacing: 2px;
     font-weight: 600;
@@ -172,7 +172,7 @@ body {
 }
 
 .btn-box a:hover{
-    color: #3a76a1;
+    color: #7851d1;
 }
 
 .btn-box a::before{
