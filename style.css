@@ -10,7 +10,7 @@
 body {
     color: #8c8c8c;
     background-color: #081b29; /* Set background color */
-    background: url('bgimg.jpg') repeat-x center center/cover; /* Set background image with cover property */
+    background: url('bgimg.svg') repeat-x center center/cover; /* Set background image with cover property */
 }
 
 .header {
@@ -97,7 +97,7 @@ body {
     height: 100vh;
     display: flex;
     background: #000;
-    background: url('bgimg.jpg') repeat-x;
+    background: url('bgimg.svg') repeat-x;
     background-size:auto ;
     background-position: center;
     align-items: center;
