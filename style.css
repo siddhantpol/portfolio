@@ -211,10 +211,10 @@ body {
     height: 40px;
     align-items: center;
     background: transparent;
-    border: 2px solid #0F2E43;
+    border: 2px solid #2a1950;
     border-radius: 50%;
     font-size: 20px;
-    color: #0F2E43;
+    color: #2a1950;
     text-decoration: none;
     z-index: 1;
     overflow: hidden;
@@ -225,7 +225,7 @@ body {
     -o-transition: .5s;
 }
 .home-sci a:hover{
-    color: #081b29;
+    color: #301b61;
 }
 
 .home-sci a::before{
