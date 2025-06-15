@@ -127,12 +127,13 @@ body {
     color:#ffffff;
 }
 
-.home-content .btn-box{
+.home-content .btn-box {
     display: flex;
     justify-content: space-between;
     width: 345px;
     height: 50px;
 }
+
 
 .btn-box a{
     position: relative;
@@ -268,11 +269,120 @@ body {
     .home-content p {
         font-size: 14px;
     }
-
+    .btn-box {
+        flex-direction: flex;
+        gap: 15px;
+        width: 75%;
+        align-items: center;
+    }
     .btn-box a {
-        width: 130px;
+        width: 80%;
         font-size: 16px;
     }
+    .blog-section {
+        padding-top: 120px;
+        padding-bottom: 80px;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(6px);
+        min-height: 100vh;
+        text-align: center;
+    }
+    
+    .blog-section h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 10px;
+    }
+    
+    .blog-section p {
+        color: #bbbbbb;
+        font-size: 1.1rem;
+        margin-bottom: 50px;
+    }
+    
+    .card {
+        background-color: #0d1321;
+        color: #ffffff;
+        border: none;
+        border-radius: 20px;
+        padding: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 25px rgba(129, 101, 228, 0.3);
+    }
+    
+    .card-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #ffffff;
+    }
+    
+    .card-text {
+        font-size: 1rem;
+        color: #cccccc;
+    }
+    
+    .badge {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+        background-color: #51319c;
+        color: #fff;
+        border-radius: 8px;
+    }
+    
+    @media (max-width: 767px) {
+        .blog-section h2 {
+            font-size: 2.2rem;
+        }
+    
+        .card {
+            padding: 16px;
+        }
+    
+        .card-title {
+            font-size: 1.2rem;
+        }
+    
+        .card-text {
+            font-size: 0.95rem;
+        }
+    }
+    .home {
+    padding: 60px 0;
+}
+
+.home-content {
+    padding: 20px 0;
+}
+
+.custom-photo {
+    max-height: 450px;
+    width: auto;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .custom-photo {
+        max-width: 90%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .btn-box {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: start;
+    }
+}
+
+
 }
 
 
