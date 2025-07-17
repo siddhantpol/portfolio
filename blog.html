@@ -6,17 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog | Siddhant Pol</title>
   <link rel="icon" type="image/png" href="pc.svg" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="bag.svg" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
     form[role="search"] input {
-    background-color: #222;
+    background-color: #0f0f0f;
     border: 1px solid #444;
-    color: #fff;
+    color: #5f3b3b;
     }
 
     form[role="search"] input::placeholder {
-    color: #aaa;
+    color: #828282;
     }
 
     form[role="search"] .btn {
@@ -34,6 +38,12 @@
       background-size: cover;
       color: #f1f1f1;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          color: #8c8c8c;
+    background-color: #081b29; /* Set background color */
+    background-image: url('bgimg.svg');
+    background-repeat: repeat-x;
+    background-position: center center;
+    background-size: cover;
     }
 
     .blog-section {
@@ -124,25 +134,32 @@
     <nav class="navbar navbar-expand-xl navbar-dark">
       <div class="container">
         <div class="navbar-brand">
-          <a href="index.html">Blogs.</a>
+          <a href="index.html">Portfolio.</a>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          </ul>
+          <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog.</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
         </div>
       </div>
       <form class="d-flex ms-3" role="search" onsubmit="return searchBlogs(event)">
         <input class="form-control me-2" type="search" placeholder="Search blogs..." aria-label="Search" id="blogSearchInput">
         <button class="btn btn-outline-light" type="submit">Search</button>
       </form>
-      
     </nav>
   </header>
 
@@ -150,19 +167,22 @@
     <div class="container">
       <h2 class="text-center mb-4">Latest Blogs</h2>
       <p class="text-center mb-5">Explore ideas, insights, and inspiration curated just for you.</p>
-  
+
       <div class="row row-cols-1 row-cols-md-3 g-4">
         <!-- Blog Card -->
         <div class="col">
-          <div class="card h-100 d-flex flex-column justify-content-between p-4">
-            <div>
-              <h5 class="card-title">Card Title 1</h5>
-              <p class="card-text">Quick blog summary goes here. Just a short preview text.</p>
+          <div class="col">
+              <a href="BusinessScam.html" style="text-decoration: none;">
+                <div class="card h-100 d-flex flex-column justify-content-between p-4">
+                  <div>
+                    <h5 class="card-title">Business Idea: Selling the Dream</h5>
+                    <p class="card-text">How False Promises of Easy Money Are Turning Ambition into Exploitation</p>
+                  </div>
+                  <span class="badge mt-3">Thought of the day</span>
+                </div>
+              </a>
             </div>
-            <span class="badge mt-3">Tech</span>
-          </div>
         </div>
-  
         <!-- Repeat for the rest (Cards 2–12) -->
         <!-- Example: -->
         <div class="col">
@@ -174,7 +194,6 @@
             <span class="badge mt-3">Design</span>
           </div>
         </div>
-  
         <!-- Add as many cards as you like -->
         <div class="col">
             <div class="card h-100 d-flex flex-column justify-content-between p-4">
@@ -238,31 +257,52 @@
               </div>
               <span class="badge mt-3">Design</span>
             </div>
+            <div id="noResultsMessage" style="display: none; text-align: center; color: #ccc; font-size: 1.2rem; margin-top: 30px;">
+                  No blogs available.
+              </div>
+
           </div>
       </div>
     </div>
   </section>
-  
-  
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
   function searchBlogs(event) {
-    event.preventDefault(); // Prevent form reload
-    const query = document.getElementById('blogSearchInput').value.toLowerCase();
+    event.preventDefault();
+    const query = document.getElementById('blogSearchInput').value.toLowerCase().trim();
     const cards = document.querySelectorAll('.card');
+    let anyVisible = false;
 
     cards.forEach(card => {
-      const text = card.innerText.toLowerCase();
-      if (text.includes(query)) {
-        card.style.display = 'block';
+      const title = card.querySelector('.card-title')?.innerText.toLowerCase() || '';
+      const text = card.querySelector('.card-text')?.innerText.toLowerCase() || '';
+      const matches = title.includes(query) || text.includes(query);
+
+      const col = card.closest('.col'); // Get the full column wrapper
+      if (matches) {
+        col.style.display = 'block';
+        anyVisible = true;
       } else {
-        card.style.display = 'none';
+        col.style.display = 'none';
       }
     });
 
+    // Show/hide "No blogs" message
+    const noResultsMessage = document.getElementById('noResultsMessage');
+    if (!anyVisible) {
+      noResultsMessage.style.display = 'block';
+    } else {
+      noResultsMessage.style.display = 'none';
+    }
+
     return false;
   }
+</script>
+
+
 
 
   </script>
